@@ -1,0 +1,2 @@
+# StrongerTogether
+Gamejam project.
