@@ -8,7 +8,6 @@ public class characterController : MonoBehaviour
     public LayerMask whatIsGround;
     Rigidbody2D rb;
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

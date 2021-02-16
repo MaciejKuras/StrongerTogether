@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class levelController : MonoBehaviour
 {
+    public bool p1ActiveDoors, p2ActiveDoors;
+    static int i = 1;
+
     void Start()
     {
 
@@ -12,15 +15,14 @@ public class levelController : MonoBehaviour
 
     void Update()
     {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        if (p1ActiveDoors && p2ActiveDoors && SceneManager.sceneCountInBuildSettings > i)
         {
-            //Debug.Log("kek");
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(i);
+            i++;
+        }
+        else if (p1ActiveDoors && p2ActiveDoors && SceneManager.sceneCountInBuildSettings == i)
+        {
+            Debug.Log("kek");
         }
     }
 }
