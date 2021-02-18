@@ -26,5 +26,14 @@ public class characterController : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpForce;
         }
+
+        if (Physics2D.OverlapCircle(feetPos.position, checkRadius).CompareTag("Floor"))
+        {
+            gameObject.transform.parent = Physics2D.OverlapCircle(feetPos.position, checkRadius).transform;
+        }
+        else
+        {
+            gameObject.transform.parent = null;
+        }
     }
 }
