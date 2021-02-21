@@ -5,10 +5,12 @@ using UnityEngine;
 public class buttonController : MonoBehaviour
 {
     wallController parentScript;
+    AudioSource audio;
 
     void Start()
     {
         parentScript = transform.parent.GetComponent<wallController>();
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -21,6 +23,7 @@ public class buttonController : MonoBehaviour
         if (collision.CompareTag("Player 1") || collision.CompareTag("Player 2"))
         {
             parentScript.buttonPressed = true;
+            audio.Play();
         }
     }
 }

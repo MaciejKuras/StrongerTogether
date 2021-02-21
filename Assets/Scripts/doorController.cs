@@ -8,7 +8,7 @@ public class doorController : MonoBehaviour
 
     void Start()
     {
-        parentScript = transform.parent.parent.GetComponent<levelController>();
+        parentScript = transform.parent.GetComponent<levelController>();
     }
 
     void Update()
@@ -26,7 +26,7 @@ public class doorController : MonoBehaviour
         if (collision.CompareTag("Player 2"))
         {
             parentScript.p2ActiveDoors = true;
-        }
+        }   
     }
 
     private void OnTriggerExit2D(Collider2D collision)

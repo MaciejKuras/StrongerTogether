@@ -7,10 +7,11 @@ public class levelController : MonoBehaviour
 {
     public bool p1ActiveDoors, p2ActiveDoors;
     static int i = 1;
+    AudioSource audio;
 
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -19,10 +20,12 @@ public class levelController : MonoBehaviour
         {
             SceneManager.LoadScene(i);
             i++;
+            audio.Play();
         }
         else if (p1ActiveDoors && p2ActiveDoors && SceneManager.sceneCountInBuildSettings == i)
         {
-            Debug.Log("kek");
+            //Debug.Log("kek");
+            audio.Play();
         }
     }
 }

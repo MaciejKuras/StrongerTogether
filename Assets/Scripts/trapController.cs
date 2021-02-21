@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class trapController : MonoBehaviour
 {
     // Start is called before the first frame update
+    AudioSource audio;
+
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class trapController : MonoBehaviour
         {
             Debug.Log("kek");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+            audio.Play();
         }
     }
 }
