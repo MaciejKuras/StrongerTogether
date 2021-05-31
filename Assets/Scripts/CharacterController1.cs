@@ -13,7 +13,10 @@ public class CharacterController1 : MonoBehaviour
     Rigidbody2D rb;
 
     public Collider2D crouchDisableCollider;
-   
+    public Transform ceilingCheck;
+    const float ceilingRadius = 0.2f;
+    private bool isCrouching = false;
+    private bool isUnderCeiling;
 
 
 
@@ -29,21 +32,21 @@ public class CharacterController1 : MonoBehaviour
     void Update()
     {
         float moveInput = Input.GetAxisRaw("P1Horizontal");
-    
-            //transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed * 10f;
-            rb.velocity = new Vector2(moveInput * speed * 10f, rb.velocity.y);
-            if (moveInput > 0)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            }
-            else if (moveInput < 0)
-            {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-            }
 
-            animator.SetFloat("Speed", Mathf.Abs(moveInput));
+        //transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed * 10f;
+        rb.velocity = new Vector2(moveInput * speed * 10f, rb.velocity.y);
+        if (moveInput > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (moveInput < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
 
-     
+        animator.SetFloat("Speed", Mathf.Abs(moveInput));
+
+
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
         if (isGrounded && Input.GetButton("P1Jump"))
@@ -53,18 +56,36 @@ public class CharacterController1 : MonoBehaviour
             audio.Play();
         }
 
-       
+
+        isUnderCeiling = Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround);
 
         if (isGrounded && Input.GetButton("P1Crouch"))
         {
-          
-            crouchDisableCollider.enabled = false;
             animator.SetBool("IsCrouching", true);
+            crouchDisableCollider.enabled = false;
 
-        } else if (Input.GetButtonUp("P1Crouch"))
+            isCrouching = true;
+
+        }
+        else
         {
-            crouchDisableCollider.enabled = true;
+            isCrouching = false;
+        }
+
+        if (isCrouching && isUnderCeiling)
+        {
+            animator.SetBool("IsCrouching", true);
+            crouchDisableCollider.enabled = false;
+
+            isCrouching = true;
+        }
+
+        else if (!isCrouching && !isUnderCeiling)
+        {
             animator.SetBool("IsCrouching", false);
+            crouchDisableCollider.enabled = true;
+
+            isCrouching = false;
         }
 
 
