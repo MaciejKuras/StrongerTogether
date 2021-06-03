@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Marta Level 5.unity
     guid: 4785bac79dd00824db4fea75d585dedd
+  - enabled: 1
+    path: Assets/Scenes/Marta Level 6.unity
+    guid: 37275a83e2276fe449efcbfdfd41e1ae
   m_configObjects: {}
