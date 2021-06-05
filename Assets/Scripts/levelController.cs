@@ -24,7 +24,6 @@ public class levelController : MonoBehaviour
         }
         else if (p1ActiveDoors && p2ActiveDoors && SceneManager.sceneCountInBuildSettings == i)
         {
-            //Debug.Log("kek");
             audio.Play();
         }
     }
