@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 1195835438500004747}
   - component: {fileID: 1195835438500004745}
   - component: {fileID: 2381515007336509090}
-  - component: {fileID: 267319583051816037}
   - component: {fileID: 1005717484107088522}
   - component: {fileID: 7409720295133158146}
+  - component: {fileID: 1478818626744649453}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -124,25 +125,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.3}
   m_Size: {x: 0.9, y: 1.4}
   m_Direction: 0
---- !u!114 &267319583051816037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195835438500004746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0444fc5fe0924084da4911dcaee9d660, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGrounded: 0
-  feetPos: {fileID: 7702079882516227930}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1024
-  animator: {fileID: 0}
-  audio: {fileID: 0}
 --- !u!95 &1005717484107088522
 Animator:
   serializedVersion: 3
@@ -258,6 +240,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1478818626744649453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195835438500004746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0444fc5fe0924084da4911dcaee9d660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
+  feetPos: {fileID: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  animator: {fileID: 0}
+  audio: {fileID: 0}
 --- !u!1 &1898117250075928654
 GameObject:
   m_ObjectHideFlags: 0
