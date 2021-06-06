@@ -64,9 +64,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ButtonFloorController.cs" />
     <Compile Include="Assets\Scripts\CharacterController1.cs" />
-    <Compile Include="Assets\Scripts\CharacterController2.cs" />
     <Compile Include="Assets\Scripts\buttonController.cs" />
     <Compile Include="Assets\Scripts\characterController.cs" />
+    <Compile Include="Assets\Scripts\characterController2.cs" />
     <Compile Include="Assets\Scripts\doorController.cs" />
     <Compile Include="Assets\Scripts\levelController.cs" />
     <Compile Include="Assets\Scripts\movingObjectController.cs" />
